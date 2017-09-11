@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <form action="/db" method="post">
+      <ul style="list-style: none;">
+      <li>
+      <textarea rows="12" cols="100" placeholder="Paste Mail Header..."  name="mailHeader" style="background:#FFE8E8" style="color:#000000"></textarea>
+      </li>
+      <li>
+      <input type="submit" value="Parse Email" class="btn btn-lg btn-default">
+      </li>
+      </ul>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

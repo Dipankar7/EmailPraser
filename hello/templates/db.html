@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="jumbotron text-center">
+  <div class="container">
+{% if  To%}
+  
+    <li><h5>To: </h5><h5>{{ To }}</h5></li>
+    <li><h5>From: </h5><h5>{{ From }}</h5></li>
+    <li><h5>Sender IP: </h5><h5>{{ Sender_IP }}</h5></li>
+    <li><h5>Mail Trace</h5>
+    {% for item in Mail_Trace_Path %}
+    	<li>{{ item }}</li>
+    {% endfor %}
+    </li>
+    <li><h5>Content</h5><textarea cols="50" rows="8">{{ Content }}</textarea></li>
+    
+
+{% else %}
+
+<h2>Not able To Parse Header or Invalid Header</h2>
+{% endif %}
+
+</ul>
+    
+  </div>
+</div>
+<ul>
+
+
+
+{% endblock %}
