@@ -87,11 +87,7 @@ def db(request):
     		else:
     			return render(request, 'db.html')
     	except Exception as err:
-    		print (err)
+            print (err)
             return render(request, 'db.html')
-    		# pass
-
-    
-    # print (mailData)
     return render(request, 'db.html',mailData)
 
