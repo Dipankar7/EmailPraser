@@ -47,7 +47,7 @@ def db(request):
     						mailData['Sender_IP']=item.split('=')[-1]
     				mailData['Sender_IP']=mailData['Sender_IP']
     			except Exception as err:
-    				print err
+    				# print err
     				mailData['Sender_IP']="NOT ABLE TO PARSE"
 
     			#Set of IPs
@@ -61,7 +61,7 @@ def db(request):
     				mailData['Mail_Trace_Path']=[mailData['From']]+list(reversed(mailData['Mail_Trace_Path']))+[mailData['To']]
 
     			except Exception as err:
-    				print err
+    				# print err
     				mailData['Mail_Trace_Path']=[mailData['From']]+[mailData['To']]
     				# mailData['Mail_Trace_Path']="NOT ABLE TO PARSE"
 
@@ -79,7 +79,7 @@ def db(request):
     				
 
     			except Exception as err:
-    				print err
+    				# print err
     				mailData['Content']="NOT ABLE TO PARSE"
 
     			
@@ -87,10 +87,10 @@ def db(request):
     		else:
     			return render(request, 'db.html')
     	except Exception as err:
-    		print err
+    		# print err
     		pass
 
     
-    print mailData
+    # print mailData
     return render(request, 'db.html',mailData)
 
